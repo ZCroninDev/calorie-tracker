@@ -36,20 +36,26 @@ const UICtrl = (function() {
 
   // Public methods  
   return {
+		populateItemList: function(items){
+			let html = '';
 
+			items.forEach(function(items){
+				html += ``/////////////
+			})
+		}
   }
 })();
 
 
 
 // App Controller
-const App = (function(itemCtrl, UICtrl) {
+const App = (function(ItemCtrl, UICtrl) {
 
   // Public function
   return {
     init: function(){
 			// Fetch items form data structure
-			const items =  itemCtrl.getItems()
+			const items =  ItemCtrl.getItems()
 
 
 			// Populate list with items
@@ -57,6 +63,6 @@ const App = (function(itemCtrl, UICtrl) {
     }
   }
 
-})(itemCtrl, UICtrl);
+})(ItemCtrl, UICtrl);
 
 App.init();
