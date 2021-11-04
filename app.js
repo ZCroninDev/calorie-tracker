@@ -33,6 +33,9 @@ const ItemCtrl = (function() {
 
 // UI controller
 const UICtrl = (function() {
+	const UISelectors = {
+		itemList: '#item-list'
+	}
 
   // Public methods  
   return {
@@ -40,8 +43,16 @@ const UICtrl = (function() {
 			let html = '';
 
 			items.forEach(function(items){
-				html += ``/////////////
-			})
+				html += `<li class="collection-item" id="item-${items.id}">
+        <strong>${items.name}: </strong> <em>${items.calories} Calories</em>
+        <a href="#" class="secondary-content">
+          <i class="edit-item fa fa-pencil"></i>
+        </a>
+      </li>`;
+			});
+
+			// Insert List items
+			document.querySelector(UISelectors.itemList).innerHTML = html;
 		}
   }
 })();
